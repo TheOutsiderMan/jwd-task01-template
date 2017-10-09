@@ -12,7 +12,7 @@ public class Laptop extends Appliance {
 	public Laptop() {
 	}
 
-	public Laptop(double batteryCapacity, String os, int memoryRom, int systemMemory, double cpu, double displayInchs) {
+	public Laptop(double batteryCapacity, String os, double memoryRom, double systemMemory, double cpu, double displayInchs) {
 		super();
 		this.batteryCapacity = batteryCapacity;
 		this.os = os;
@@ -115,6 +115,5 @@ public class Laptop extends Appliance {
 			return false;
 		return true;
 	}
-	
 	
 }

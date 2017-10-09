@@ -2,19 +2,18 @@ package by.tc.task01.entity;
 
 public class VacuumCleaner extends Appliance {
 
-	private int powerConsumption;
+	private double powerConsumption;
 	private String filterType;
 	private String bagType;
 	private String wandType;
-	private int motorSpeedRegulation;
+	private double motorSpeedRegulation;
 	private double cleaningWidth;
 
 	public VacuumCleaner() {
-
 	}
 
-	public VacuumCleaner(int powerConsumption, String filterType, String bagType, String wandType,
-			int motorSpeedRegulation, double cleaningWidth) {
+	public VacuumCleaner(double powerConsumption, String filterType, String bagType, String wandType,
+			double motorSpeedRegulation, double cleaningWidth) {
 		super();
 		this.powerConsumption = powerConsumption;
 		this.filterType = filterType;
@@ -24,11 +23,11 @@ public class VacuumCleaner extends Appliance {
 		this.cleaningWidth = cleaningWidth;
 	}
 
-	public int getPowerConsumption() {
+	public double getPowerConsumption() {
 		return powerConsumption;
 	}
 
-	public void setPowerConsumption(int powerConsumption) {
+	public void setPowerConsumption(double powerConsumption) {
 		this.powerConsumption = powerConsumption;
 	}
 
@@ -56,11 +55,11 @@ public class VacuumCleaner extends Appliance {
 		this.wandType = wandType;
 	}
 
-	public int getMotorSpeedRegulation() {
+	public double getMotorSpeedRegulation() {
 		return motorSpeedRegulation;
 	}
 
-	public void setMotorSpeedRegulation(int motorSpeedRegulation) {
+	public void setMotorSpeedRegulation(double motorSpeedRegulation) {
 		this.motorSpeedRegulation = motorSpeedRegulation;
 	}
 
@@ -81,8 +80,10 @@ public class VacuumCleaner extends Appliance {
 		temp = Double.doubleToLongBits(cleaningWidth);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((filterType == null) ? 0 : filterType.hashCode());
-		result = prime * result + motorSpeedRegulation;
-		result = prime * result + powerConsumption;
+		temp = Double.doubleToLongBits(motorSpeedRegulation);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(powerConsumption);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((wandType == null) ? 0 : wandType.hashCode());
 		return result;
 	}
@@ -108,9 +109,9 @@ public class VacuumCleaner extends Appliance {
 				return false;
 		} else if (!filterType.equals(other.filterType))
 			return false;
-		if (motorSpeedRegulation != other.motorSpeedRegulation)
+		if (Double.doubleToLongBits(motorSpeedRegulation) != Double.doubleToLongBits(other.motorSpeedRegulation))
 			return false;
-		if (powerConsumption != other.powerConsumption)
+		if (Double.doubleToLongBits(powerConsumption) != Double.doubleToLongBits(other.powerConsumption))
 			return false;
 		if (wandType == null) {
 			if (other.wandType != null)

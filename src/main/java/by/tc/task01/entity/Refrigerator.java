@@ -2,18 +2,16 @@ package by.tc.task01.entity;
 
 public class Refrigerator extends Appliance {
 
-	private int powerConsumption;
+	private double powerConsumption;
 	private double weight;
 	private double freezerCapacity;
 	private double overallCapacity;
 	private double height;
 	private double width;
 
-	public Refrigerator() {
+	public Refrigerator() {}
 
-	}
-
-	public Refrigerator(int powerConsumption, double weight, double freezerCapacity, double overallCapacity,
+	public Refrigerator(double powerConsumption, double weight, double freezerCapacity, double overallCapacity,
 			double height, double width) {
 		super();
 		this.powerConsumption = powerConsumption;
@@ -24,11 +22,11 @@ public class Refrigerator extends Appliance {
 		this.width = width;
 	}
 
-	public int getPowerConsumption() {
+	public double getPowerConsumption() {
 		return powerConsumption;
 	}
 
-	public void setPowerConsumption(int powerConsumption) {
+	public void setPowerConsumption(double powerConsumption) {
 		this.powerConsumption = powerConsumption;
 	}
 
@@ -83,7 +81,8 @@ public class Refrigerator extends Appliance {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(overallCapacity);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + powerConsumption;
+		temp = Double.doubleToLongBits(powerConsumption);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(weight);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(width);
@@ -106,7 +105,7 @@ public class Refrigerator extends Appliance {
 			return false;
 		if (Double.doubleToLongBits(overallCapacity) != Double.doubleToLongBits(other.overallCapacity))
 			return false;
-		if (powerConsumption != other.powerConsumption)
+		if (Double.doubleToLongBits(powerConsumption) != Double.doubleToLongBits(other.powerConsumption))
 			return false;
 		if (Double.doubleToLongBits(weight) != Double.doubleToLongBits(other.weight))
 			return false;
@@ -115,4 +114,5 @@ public class Refrigerator extends Appliance {
 		return true;
 	}
 
+	
 }

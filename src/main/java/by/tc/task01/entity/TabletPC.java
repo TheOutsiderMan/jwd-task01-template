@@ -4,15 +4,15 @@ public class TabletPC extends Appliance {
 
 	private double batteryCapacity;
 	private double displayInches;
-	private int memoryRom;
-	private int flashMemoryCapacity;
+	private double memoryRom;
+	private double flashMemoryCapacity;
 	private String color;
 
 	public TabletPC() {
 
 	}
 
-	public TabletPC(double batteryCapacity, double displayInches, int memoryRom, int flashMemoryCapacity,
+	public TabletPC(double batteryCapacity, double displayInches, double memoryRom, double flashMemoryCapacity,
 			String color) {
 		super();
 		this.batteryCapacity = batteryCapacity;
@@ -38,19 +38,19 @@ public class TabletPC extends Appliance {
 		this.displayInches = displayInches;
 	}
 
-	public int getMemoryRom() {
+	public double getMemoryRom() {
 		return memoryRom;
 	}
 
-	public void setMemoryRom(int memoryRom) {
+	public void setMemoryRom(double memoryRom) {
 		this.memoryRom = memoryRom;
 	}
 
-	public int getFlashMemoryCapacity() {
+	public double getFlashMemoryCapacity() {
 		return flashMemoryCapacity;
 	}
 
-	public void setFlashMemoryCapacity(int flashMemoryCapacity) {
+	public void setFlashMemoryCapacity(double flashMemoryCapacity) {
 		this.flashMemoryCapacity = flashMemoryCapacity;
 	}
 
@@ -72,8 +72,10 @@ public class TabletPC extends Appliance {
 		result = prime * result + ((color == null) ? 0 : color.hashCode());
 		temp = Double.doubleToLongBits(displayInches);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + flashMemoryCapacity;
-		result = prime * result + memoryRom;
+		temp = Double.doubleToLongBits(flashMemoryCapacity);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(memoryRom);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -95,11 +97,11 @@ public class TabletPC extends Appliance {
 			return false;
 		if (Double.doubleToLongBits(displayInches) != Double.doubleToLongBits(other.displayInches))
 			return false;
-		if (flashMemoryCapacity != other.flashMemoryCapacity)
+		if (Double.doubleToLongBits(flashMemoryCapacity) != Double.doubleToLongBits(other.flashMemoryCapacity))
 			return false;
-		if (memoryRom != other.memoryRom)
+		if (Double.doubleToLongBits(memoryRom) != Double.doubleToLongBits(other.memoryRom))
 			return false;
 		return true;
 	}
-
+	
 }
