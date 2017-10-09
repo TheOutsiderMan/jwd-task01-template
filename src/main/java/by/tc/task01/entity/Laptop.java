@@ -4,8 +4,8 @@ public class Laptop extends Appliance {
 
 	private double batteryCapacity;
 	private String os;
-	private int memoryROM;
-	private int systemMemory;
+	private double memoryROM;
+	private double systemMemory;
 	private double cpu;
 	private double displayInchs;
 
@@ -38,19 +38,19 @@ public class Laptop extends Appliance {
 		this.os = os;
 	}
 
-	public int getMemoryRom() {
+	public double getMemoryRom() {
 		return memoryROM;
 	}
 
-	public void setMemoryRom(int memoryRom) {
+	public void setMemoryRom(double memoryRom) {
 		this.memoryROM = memoryRom;
 	}
 
-	public int getSystemMemory() {
+	public double getSystemMemory() {
 		return systemMemory;
 	}
 
-	public void setSystemMemory(int systemMemory) {
+	public void setSystemMemory(double systemMemory) {
 		this.systemMemory = systemMemory;
 	}
 
@@ -81,9 +81,11 @@ public class Laptop extends Appliance {
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		temp = Double.doubleToLongBits(displayInchs);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + memoryROM;
+		temp = Double.doubleToLongBits(memoryROM);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((os == null) ? 0 : os.hashCode());
-		result = prime * result + systemMemory;
+		temp = Double.doubleToLongBits(systemMemory);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -102,16 +104,17 @@ public class Laptop extends Appliance {
 			return false;
 		if (Double.doubleToLongBits(displayInchs) != Double.doubleToLongBits(other.displayInchs))
 			return false;
-		if (memoryROM != other.memoryROM)
+		if (Double.doubleToLongBits(memoryROM) != Double.doubleToLongBits(other.memoryROM))
 			return false;
 		if (os == null) {
 			if (other.os != null)
 				return false;
 		} else if (!os.equals(other.os))
 			return false;
-		if (systemMemory != other.systemMemory)
+		if (Double.doubleToLongBits(systemMemory) != Double.doubleToLongBits(other.systemMemory))
 			return false;
 		return true;
 	}
-
+	
+	
 }
