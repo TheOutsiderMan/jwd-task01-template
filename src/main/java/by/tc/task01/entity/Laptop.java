@@ -10,16 +10,7 @@ public class Laptop extends Appliance {
 	private double displayInchs;
 
 	public Laptop() {
-	}
-
-	public Laptop(double batteryCapacity, String os, double memoryRom, double systemMemory, double cpu, double displayInchs) {
-		super();
-		this.batteryCapacity = batteryCapacity;
-		this.os = os;
-		this.memoryROM = memoryRom;
-		this.systemMemory = systemMemory;
-		this.cpu = cpu;
-		this.displayInchs = displayInchs;
+		
 	}
 
 	public double getBatteryCapacity() {
@@ -38,11 +29,11 @@ public class Laptop extends Appliance {
 		this.os = os;
 	}
 
-	public double getMemoryRom() {
+	public double getMemoryROM() {
 		return memoryROM;
 	}
 
-	public void setMemoryRom(double memoryRom) {
+	public void setMemoryROM(double memoryRom) {
 		this.memoryROM = memoryRom;
 	}
 

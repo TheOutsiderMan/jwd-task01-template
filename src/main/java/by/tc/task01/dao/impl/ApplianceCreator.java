@@ -47,11 +47,10 @@ public class ApplianceCreator {
 		Oven oven = new Oven();
 		oven.setPowerConsumption(Double.valueOf(parametres[i += 1]));
 		oven.setWeight(Double.valueOf(parametres[i += 2]));
-		double capacity = Double.valueOf(parametres[i += 2]);
-		double depth = Double.valueOf(parametres[i += 2]);
-		double height = Double.valueOf(parametres[i += 2]);
-		double width = Double.valueOf(parametres[i += 2]);
-		
+		oven.setCapacity(Double.valueOf(parametres[i += 2]));
+		oven.setDepth(Double.valueOf(parametres[i += 2]));
+		oven.setHeight(Double.valueOf(parametres[i += 2]));
+		oven.setWidth(Double.valueOf(parametres[i += 2]));
 		return oven;
 	}
 
@@ -62,13 +61,13 @@ public class ApplianceCreator {
 				break;
 			}
 		}
-		double batteryCapacity = Double.valueOf(parametres[i += 1]);
-		String os = parametres[i += 2];
-		int memoryRom = Integer.valueOf(parametres[i += 2]);
-		int systemMemory = Integer.valueOf(parametres[i += 2]);
-		double cpu = Double.valueOf(parametres[i += 2]);
-		double displayInchs = Double.valueOf(parametres[i += 2]);
-		Laptop laptop = new Laptop(batteryCapacity, os, memoryRom, systemMemory, cpu, displayInchs);
+		Laptop laptop = new Laptop();
+		laptop.setBatteryCapacity(Double.valueOf(parametres[i += 1]));
+		laptop.setOs(parametres[i += 2]);
+		laptop.setMemoryROM(Double.valueOf(parametres[i += 2]));
+		laptop.setSystemMemory(Double.valueOf(parametres[i += 2]));
+		laptop.setCpu(Double.valueOf(parametres[i += 2]));
+		laptop.setDisplayInchs(Double.valueOf(parametres[i += 2]));
 		return laptop;
 	}
 
@@ -79,14 +78,13 @@ public class ApplianceCreator {
 				break;
 			}
 		}
-		int powerConsumption = Integer.valueOf(parametres[i += 1]);
-		double weight = Double.valueOf(parametres[i += 2]);
-		double freezerCapacity = Double.valueOf(parametres[i += 2]);
-		double overallCapacity = Double.valueOf(parametres[i += 2]);
-		double height = Double.valueOf(parametres[i += 2]);
-		double width = Double.valueOf(parametres[i += 2]);
-		Refrigerator refrigerator = new Refrigerator(powerConsumption, weight, freezerCapacity, overallCapacity, height,
-				width);
+		Refrigerator refrigerator = new Refrigerator();
+		refrigerator.setPowerConsumption(Double.valueOf(parametres[i += 1]));
+		refrigerator.setWeight(Double.valueOf(parametres[i += 2]));
+		refrigerator.setFreezerCapacity(Double.valueOf(parametres[i += 2]));
+		refrigerator.setOverallCapacity(Double.valueOf(parametres[i += 2]));
+		refrigerator.setHeight(Double.valueOf(parametres[i += 2]));
+		refrigerator.setWidth(Double.valueOf(parametres[i += 2]));
 		return refrigerator;
 	}
 
@@ -97,15 +95,13 @@ public class ApplianceCreator {
 				break;
 			}
 		}
-		int powerConsumption = Integer.valueOf(parametres[i += 1]);
-		String filterType = parametres[i += 2];
-		String bagType = parametres[i += 2];
-		String wandType = parametres[i += 2];
-		int motorSpeedRegulation = Integer.valueOf(parametres[i += 2]);
-		double cleaningWidth = Double.valueOf(parametres[i += 2]);
-		;
-		VacuumCleaner vacuumCleaner = new VacuumCleaner(powerConsumption, filterType, bagType, wandType,
-				motorSpeedRegulation, cleaningWidth);
+		VacuumCleaner vacuumCleaner = new VacuumCleaner();
+		vacuumCleaner.setPowerConsumption(Double.valueOf(parametres[i += 1]));
+		vacuumCleaner.setFilterType(parametres[i += 2]);
+		vacuumCleaner.setBagType(parametres[i += 2]);
+		vacuumCleaner.setWandType(parametres[i += 2]);
+		vacuumCleaner.setMotorSpeedRegulation(Double.valueOf(parametres[i += 2]));
+		vacuumCleaner.setCleaningWidth(Double.valueOf(parametres[i += 2]));
 		return vacuumCleaner;
 	}
 
@@ -116,12 +112,12 @@ public class ApplianceCreator {
 				break;
 			}
 		}
-		double batteryCapacity = Double.valueOf(parametres[i += 1]);
-		double displayInches = Double.valueOf(parametres[i += 2]);
-		int memoryRom = Integer.valueOf(parametres[i += 2]);
-		int flashMemoryCapacity = Integer.valueOf(parametres[i += 2]);
-		String color = parametres[i += 2];
-		TabletPC tabletPC = new TabletPC(batteryCapacity, displayInches, memoryRom, flashMemoryCapacity, color);
+		TabletPC tabletPC = new TabletPC();
+		tabletPC.setBatteryCapacity(Double.valueOf(parametres[i += 1]));
+		tabletPC.setDisplayInches(Double.valueOf(parametres[i += 2]));
+		tabletPC.setMemoryRom(Double.valueOf(parametres[i += 2]));
+		tabletPC.setFlashMemoryCapacity(Double.valueOf(parametres[i += 2]));
+		tabletPC.setColor(parametres[i += 2]);
 		return tabletPC;
 	}
 
@@ -132,11 +128,11 @@ public class ApplianceCreator {
 				break;
 			}
 		}
-		int powerConsumption = Integer.valueOf(parametres[i += 1]);
-		int numberOfSpeakers = Integer.valueOf(parametres[i += 2]);
-		String frequencyRange = parametres[i += 2];
-		double cordLength = Double.valueOf(parametres[i += 2]);
-		Speakers speakers = new Speakers(powerConsumption, numberOfSpeakers, frequencyRange, cordLength);
+		Speakers speakers = new Speakers();
+		speakers.setPowerConsumption(Double.valueOf(parametres[i += 1]));
+		speakers.setNumberOfSpeakers(Double.valueOf(parametres[i += 2]));
+		speakers.setFrequencyRange(parametres[i += 2]);
+		speakers.setCordLength(Double.valueOf(parametres[i += 2]));
 		return speakers;
 	}
 }

@@ -9,17 +9,8 @@ public class Refrigerator extends Appliance {
 	private double height;
 	private double width;
 
-	public Refrigerator() {}
-
-	public Refrigerator(double powerConsumption, double weight, double freezerCapacity, double overallCapacity,
-			double height, double width) {
-		super();
-		this.powerConsumption = powerConsumption;
-		this.weight = weight;
-		this.freezerCapacity = freezerCapacity;
-		this.overallCapacity = overallCapacity;
-		this.height = height;
-		this.width = width;
+	public Refrigerator() {
+		
 	}
 
 	public double getPowerConsumption() {

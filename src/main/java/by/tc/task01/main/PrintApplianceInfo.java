@@ -63,7 +63,7 @@ public class PrintApplianceInfo {
 		lineToPrint.append(", OS = ");
 		lineToPrint.append(laptop.getOs());
 		lineToPrint.append(", MEMORY_ROM = ");
-		lineToPrint.append(laptop.getMemoryRom());
+		lineToPrint.append(laptop.getMemoryROM());
 		lineToPrint.append(", SYSTEM_MEMORY = ");
 		lineToPrint.append(laptop.getSystemMemory());
 		lineToPrint.append(", CPU = ");

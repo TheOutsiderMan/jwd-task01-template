@@ -11,16 +11,6 @@ public class Oven extends Appliance {
 
 	public Oven() {}
 
-	public Oven(double powerConsumption, double weight, double capacity, double depth, double height, double width) {
-		super();
-		this.powerConsumption = powerConsumption;
-		this.weight = weight;
-		this.capacity = capacity;
-		this.depth = depth;
-		this.height = height;
-		this.width = width;
-	}
-
 	public double getPowerConsumption() {
 		return powerConsumption;
 	}

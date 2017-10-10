@@ -2,8 +2,8 @@ package by.tc.task01.entity;
 
 public class Speakers extends Appliance {
 
-	private int powerConsumption;
-	private int numberOfSpeakers;
+	private double powerConsumption;
+	private double numberOfSpeakers;
 	private String frequencyRange;
 	private double cordLength;
 
@@ -11,27 +11,19 @@ public class Speakers extends Appliance {
 
 	}
 
-	public Speakers(int powerConsumption, int numberOfSpeakers, String frequencyRange, double cordLength) {
-		super();
-		this.powerConsumption = powerConsumption;
-		this.numberOfSpeakers = numberOfSpeakers;
-		this.frequencyRange = frequencyRange;
-		this.cordLength = cordLength;
-	}
-
-	public int getPowerConsumption() {
+	public double getPowerConsumption() {
 		return powerConsumption;
 	}
 
-	public void setPowerConsumption(int powerConsumption) {
+	public void setPowerConsumption(double powerConsumption) {
 		this.powerConsumption = powerConsumption;
 	}
 
-	public int getNumberOfSpeakers() {
+	public double getNumberOfSpeakers() {
 		return numberOfSpeakers;
 	}
 
-	public void setNumberOfSpeakers(int numberOfSpeakers) {
+	public void setNumberOfSpeakers(double numberOfSpeakers) {
 		this.numberOfSpeakers = numberOfSpeakers;
 	}
 
@@ -47,7 +39,7 @@ public class Speakers extends Appliance {
 		return cordLength;
 	}
 
-	public void setCordLength(int cordLength) {
+	public void setCordLength(double cordLength) {
 		this.cordLength = cordLength;
 	}
 
@@ -59,8 +51,10 @@ public class Speakers extends Appliance {
 		temp = Double.doubleToLongBits(cordLength);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
 		result = prime * result + ((frequencyRange == null) ? 0 : frequencyRange.hashCode());
-		result = prime * result + numberOfSpeakers;
-		result = prime * result + powerConsumption;
+		temp = Double.doubleToLongBits(numberOfSpeakers);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(powerConsumption);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -80,9 +74,9 @@ public class Speakers extends Appliance {
 				return false;
 		} else if (!frequencyRange.equals(other.frequencyRange))
 			return false;
-		if (numberOfSpeakers != other.numberOfSpeakers)
+		if (Double.doubleToLongBits(numberOfSpeakers) != Double.doubleToLongBits(other.numberOfSpeakers))
 			return false;
-		if (powerConsumption != other.powerConsumption)
+		if (Double.doubleToLongBits(powerConsumption) != Double.doubleToLongBits(other.powerConsumption))
 			return false;
 		return true;
 	}

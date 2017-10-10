@@ -12,16 +12,6 @@ public class TabletPC extends Appliance {
 
 	}
 
-	public TabletPC(double batteryCapacity, double displayInches, double memoryRom, double flashMemoryCapacity,
-			String color) {
-		super();
-		this.batteryCapacity = batteryCapacity;
-		this.displayInches = displayInches;
-		this.memoryRom = memoryRom;
-		this.flashMemoryCapacity = flashMemoryCapacity;
-		this.color = color;
-	}
-
 	public double getBatteryCapacity() {
 		return batteryCapacity;
 	}

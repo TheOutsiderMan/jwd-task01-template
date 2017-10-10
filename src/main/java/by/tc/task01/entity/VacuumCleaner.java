@@ -12,17 +12,6 @@ public class VacuumCleaner extends Appliance {
 	public VacuumCleaner() {
 	}
 
-	public VacuumCleaner(double powerConsumption, String filterType, String bagType, String wandType,
-			double motorSpeedRegulation, double cleaningWidth) {
-		super();
-		this.powerConsumption = powerConsumption;
-		this.filterType = filterType;
-		this.bagType = bagType;
-		this.wandType = wandType;
-		this.motorSpeedRegulation = motorSpeedRegulation;
-		this.cleaningWidth = cleaningWidth;
-	}
-
 	public double getPowerConsumption() {
 		return powerConsumption;
 	}
