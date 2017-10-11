@@ -28,4 +28,3 @@ public final class SearchCriteria {
 	
 	private SearchCriteria() {}
 }
-

@@ -9,8 +9,10 @@ import by.tc.task01.entity.TabletPC;
 import by.tc.task01.entity.VacuumCleaner;
 import by.tc.task01.entity.criteria.SearchCriteria;
 
-public class ApplianceCreator {
-
+public final class ApplianceCreator {
+	
+	private ApplianceCreator( ) {}
+	
 	public static Appliance createAppliance(String line) {
 		String[] parametres = line.split("[:;\\s,=]+");
 		Appliance appliance = null;

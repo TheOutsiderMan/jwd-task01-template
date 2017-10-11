@@ -7,14 +7,7 @@ import java.io.IOException;
 
 import by.tc.task01.dao.ApplianceDAO;
 import by.tc.task01.entity.Appliance;
-import by.tc.task01.entity.Laptop;
-import by.tc.task01.entity.Oven;
-import by.tc.task01.entity.Refrigerator;
-import by.tc.task01.entity.Speakers;
-import by.tc.task01.entity.TabletPC;
-import by.tc.task01.entity.VacuumCleaner;
 import by.tc.task01.entity.criteria.Criteria;
-import by.tc.task01.entity.criteria.SearchCriteria;
 
 public class ApplianceDAOImpl implements ApplianceDAO {
 

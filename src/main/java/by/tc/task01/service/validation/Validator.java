@@ -3,8 +3,12 @@ package by.tc.task01.service.validation;
 import java.util.Map;
 
 import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.entity.criteria.SearchCriteria.Laptop;
 import by.tc.task01.entity.criteria.SearchCriteria.Oven;
+import by.tc.task01.entity.criteria.SearchCriteria.Refrigerator;
 import by.tc.task01.entity.criteria.SearchCriteria.Speakers;
+import by.tc.task01.entity.criteria.SearchCriteria.TabletPC;
+import by.tc.task01.entity.criteria.SearchCriteria.VacuumCleaner;
 
 public class Validator {
 
@@ -36,21 +40,36 @@ public class Validator {
 	}
 	
 	private static <E> boolean validateTabletPC(Map<E, Object> criteriasMap) {
-
-		return true;
-	}
-
-	private static <E> boolean validateVacuumCleaner(Map<E, Object> criteriasMap) {
-		return true;
-	}
-
-	private static <E> boolean validateRefrigerator(Map<E, Object> criteriasMap) {
-
-		return true;
-	}
-
-	private static <E> boolean validateLaptop(Map<E, Object> criteriasMap) {
-
+		if (criteriasMap.containsKey(TabletPC.BATTERY_CAPACITY)) {
+			Object value = criteriasMap.get(TabletPC.BATTERY_CAPACITY);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(TabletPC.DISPLAY_INCHES)) {
+			Object value = criteriasMap.get(TabletPC.DISPLAY_INCHES);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(TabletPC.MEMORY_ROM)) {
+			Object value = criteriasMap.get(TabletPC.MEMORY_ROM);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(TabletPC.FLASH_MEMORY_CAPACITY)) {
+			Object value = criteriasMap.get(TabletPC.FLASH_MEMORY_CAPACITY);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(TabletPC.COLOR)) {
+			Object value = criteriasMap.get(TabletPC.COLOR);
+			if (isBlank(value)) {
+				return false;
+			}
+		}
 		return true;
 	}
 
@@ -94,6 +113,126 @@ public class Validator {
 		return true;
 	}
 	
+	private static <E> boolean validateLaptop(Map<E, Object> criteriasMap) {
+		if (criteriasMap.containsKey(Laptop.BATTERY_CAPACITY)) {
+			Object value = criteriasMap.get(Laptop.BATTERY_CAPACITY);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Laptop.OS)) {
+			Object value = criteriasMap.get(Laptop.OS);
+			if (isBlank(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Laptop.MEMORY_ROM)) {
+			Object value = criteriasMap.get(Laptop.MEMORY_ROM);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Laptop.SYSTEM_MEMORY)) {
+			Object value = criteriasMap.get(Laptop.SYSTEM_MEMORY);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Laptop.CPU)) {
+			Object value = criteriasMap.get(Laptop.CPU);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Laptop.CPU)) {
+			Object value = criteriasMap.get(Laptop.CPU);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private static <E> boolean validateRefrigerator(Map<E, Object> criteriasMap) {
+		if (criteriasMap.containsKey(Refrigerator.POWER_CONSUMPTION)) {
+			Object value = criteriasMap.get(Refrigerator.POWER_CONSUMPTION);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Refrigerator.WEIGHT)) {
+			Object value = criteriasMap.get(Refrigerator.WEIGHT);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Refrigerator.FREEZER_CAPACITY)) {
+			Object value = criteriasMap.get(Refrigerator.FREEZER_CAPACITY);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Refrigerator.OVERALL_CAPACITY)) {
+			Object value = criteriasMap.get(Refrigerator.OVERALL_CAPACITY);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Refrigerator.HEIGHT)) {
+			Object value = criteriasMap.get(Refrigerator.HEIGHT);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Refrigerator.WIDTH)) {
+			Object value = criteriasMap.get(Refrigerator.WIDTH);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private static <E> boolean validateVacuumCleaner(Map<E, Object> criteriasMap) {
+		if (criteriasMap.containsKey(VacuumCleaner.POWER_CONSUMPTION)) {
+			Object value = criteriasMap.get(VacuumCleaner.POWER_CONSUMPTION);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(VacuumCleaner.FILTER_TYPE)) {
+			Object value = criteriasMap.get(VacuumCleaner.FILTER_TYPE);
+			if (isBlank(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(VacuumCleaner.BAG_TYPE)) {
+			Object value = criteriasMap.get(VacuumCleaner.BAG_TYPE);
+			if (isBlank(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(VacuumCleaner.WAND_TYPE)) {
+			Object value = criteriasMap.get(VacuumCleaner.WAND_TYPE);
+			if (isBlank(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(VacuumCleaner.MOTOR_SPEED_REGULATION)) {
+			Object value = criteriasMap.get(VacuumCleaner.MOTOR_SPEED_REGULATION);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(VacuumCleaner.CLEANING_WIDTH)) {
+			Object value = criteriasMap.get(VacuumCleaner.CLEANING_WIDTH);
+			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
 	private static <E> boolean validateSpeakers(Map<E, Object> criteriasMap) {
 		if (criteriasMap.containsKey(Speakers.POWER_CONSUMPTION)) {
 			Object value = criteriasMap.get(Speakers.POWER_CONSUMPTION);
@@ -104,6 +243,12 @@ public class Validator {
 		if (criteriasMap.containsKey(Speakers.NUMBER_OF_SPEAKERS)) {
 			Object value = criteriasMap.get(Speakers.NUMBER_OF_SPEAKERS);
 			if (!isPositiveDouble(value)) {
+				return false;
+			}
+		}
+		if (criteriasMap.containsKey(Speakers.FREQUENCY_RANGE)) {
+			Object value = criteriasMap.get(Speakers.FREQUENCY_RANGE);
+			if (isBlank(value)) {
 				return false;
 			}
 		}
@@ -127,4 +272,15 @@ public class Validator {
 		}
 		return true;
 	}
+	
+	private static boolean isBlank(Object object) {
+		String obString = String.valueOf(object);
+		if (obString.length() == 0) {
+			return true;
+		} else if (obString.matches("\\s+")) {
+			return true;
+		}
+		return false;
+	}
+	
 }

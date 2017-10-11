@@ -12,7 +12,7 @@ public class PrintApplianceInfo {
 	
 	public static void print(Appliance appliance) {
 		if (appliance == null) {
-			System.out.println("Sorry, we don't have such appliances");
+			System.out.println("Sorry, we don't have such appliance");
 		}
 		if (appliance instanceof Oven) {
 			Oven oven = (Oven) appliance;
